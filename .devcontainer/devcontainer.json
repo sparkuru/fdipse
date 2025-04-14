@@ -1,0 +1,19 @@
+// For format details, see https://aka.ms/devcontainer.json.
+{
+    "name": "dev-ubuntu",
+    "image": "mcr.microsoft.com/devcontainers/base:jammy",
+    "runArgs": ["--privileged"],
+    "mounts": [
+            "source=/dev,target=/dev,type=bind"
+    ],
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0",
+    "customizations": {
+            "vscode": {
+                    "extensions": [
+                            "ms-vscode.cpptools",
+                            "espressif.esp-idf-extension"
+                    ]
+            }
+    },
+    "remoteUser": "root"
+}
